@@ -21,7 +21,8 @@
       url: "http://service.corsauth.com:9001/engine",
       xhrFields: {
         withCredentials: true
-      }
+      },
+      contentType: 'application/json'
     }).done(function(data){
       $('#requestStatus').text('Request authorized for: ' + data[0].username);
     }).error(function(data){
