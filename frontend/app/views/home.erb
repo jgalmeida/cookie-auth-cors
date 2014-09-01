@@ -1,0 +1,26 @@
+<h1>Login</h1>
+
+<form action="/login" method="post" role="form">
+  <input id="username" name="username" type="text" class="form-control" />
+  <input type="submit" value="Login" class="btn btn-primary"/>
+</form>
+
+<button onclick='sendCorsRequest();'>Send request to cors-auth service</button>
+
+<p id='requestStatus'>
+  Request status.
+</p>
+
+
+<script>
+  function sendCorsRequest() {
+    $.ajax({
+      type: 'POST',
+      url: "http://service.corsauth.com:9001/engine"
+    }).done(function(data){
+      $('#requestStatus').text('Request authorized for: ' + data[0].username);
+    }).error(function(data){
+      $('#requestStatus').text('Request unauthorized.');
+    });
+  }
+</script>
