@@ -15,6 +15,14 @@ class App < Sinatra::Base
   }
 
   get '/' do
+    @current_username = session['current_user']
+    erb :home
+  end
+
+  post '/login' do
+    @current_username = params[:username]
+    session['current_user'] = params[:username]
+
     erb :home
   end
 end

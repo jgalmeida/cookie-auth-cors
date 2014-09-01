@@ -1,5 +1,7 @@
 <h1>Login</h1>
 
+<h2>Logged in as: <%= @current_username %></h2>
+
 <form action="/login" method="post" role="form">
   <input id="username" name="username" type="text" class="form-control" />
   <input type="submit" value="Login" class="btn btn-primary"/>
