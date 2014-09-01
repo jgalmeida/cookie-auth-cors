@@ -5,11 +5,15 @@ class LinkedcareCors
   end
 
   def call(env)
-    status, headers, body = @app.call(env)
+    if env['REQUEST_METHOD'] == 'OPTIONS'
+      return [200, { 'Content-Type' => 'text/plain' }.merge(cors_headers), nil]
+    else
+      status, headers, body = @app.call(env)
 
-    headers.merge!(cors_headers)
+      headers.merge!(cors_headers)
 
-    [status, headers, body]
+      [status, headers, body]
+    end
   end
 
   def cors_headers
