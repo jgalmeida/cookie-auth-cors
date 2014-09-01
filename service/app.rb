@@ -10,6 +10,6 @@ class App < Sinatra::Base
   disable :protection
 
   get '/' do
-    'Waaaaaaarooooooooo!'
+    "Waaaaaaarooooooooo!"
   end
 end

@@ -7,4 +7,10 @@ Bundler.require(:default)
 
 require 'app'
 
+use Rack::Session::Cookie,
+  :key => 'linkedcaresuperkey',
+  :secret => 'linkedcaresupersecret',
+  :domain => '.corsauth.com',
+  :expire_after => 2592000
+
 run App
