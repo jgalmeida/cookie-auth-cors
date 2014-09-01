@@ -11,7 +11,7 @@ class App < Sinatra::Base
   assets {
     serve '/js', from: 'app/js'
 
-    js :application, '/js/application.js', ['/js/jquery.js']
+    js :application, ['/js/jquery.js']
   }
 
   get '/' do
