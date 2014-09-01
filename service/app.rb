@@ -10,6 +10,12 @@ class App < Sinatra::Base
   disable :protection
 
   get '/' do
-    "Waaaaaaarooooooooo!"
+    "Waaaaaaarooooooooo! #{current_user}"
+  end
+
+  post '/engine' do
+    authenticate!
+
+    json [{ username: current_user }], status: 200
   end
 end

@@ -8,4 +8,8 @@ Bundler.require(:default)
 require 'auth'
 require 'app'
 
+use Rack::Session::Cookie,
+  :key => 'linkedcaresuperkey',
+  :secret => 'linkedcaresupersecret'
+
 run App
