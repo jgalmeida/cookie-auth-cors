@@ -9,8 +9,8 @@ require 'auth'
 require 'app'
 
 use Rack::Session::Cookie,
-  :key => 'linkedcaresuperkey',
-  :secret => 'linkedcaresupersecret'
+  :key => 'railslinkedcaresuperkey',
+  :secret => 'linkedcaresupersecretlinkedcaresupersecretlinkedcaresupersecretlinkedcaresupersecretlinkedcaresupersecret'
 
 use Rack::Cors do
   allow do
